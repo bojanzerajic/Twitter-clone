@@ -25,7 +25,9 @@ const Login = () => {
       body: JSON.stringify(payload),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        localStorage.setItem('token', JSON.stringify(data.token));
+      })
       .catch((err) => setError('Invalid email or password'));
   };
   const handleEmailChange = (event) => {
