@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from './Login.module.scss';
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -27,6 +27,7 @@ const Login = () => {
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem('token', JSON.stringify(data.token));
+        props.history.push('/homepage');
       })
       .catch((err) => setError('Invalid email or password'));
   };

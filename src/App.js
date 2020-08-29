@@ -8,7 +8,7 @@ const App = withRouter(() => {
     return (
       <div className="App">
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route path="/" component={Login} />
         </Switch>
       </div>
     );
@@ -16,7 +16,7 @@ const App = withRouter(() => {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" component={Homepage} />
+        <Route path="/homepage" component={Homepage} />
       </Switch>
     </div>
   );
